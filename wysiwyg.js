@@ -11,9 +11,14 @@ function setArr() {
 	outputCards(array)
 };
 	
-function outputCards(array) {
-	for (i = 0; i < array.length; i++) {
-		
+function outputCards(peopleArray) {
+	for (i = 0; i < peopleArray.length; i++) {
+		console.log(peopleArray[i].title)
+		container.innerHTML += `<person>
+  		<header>${peopleArray[i].name} & ${peopleArray[i].title}</header>
+  		<section>${peopleArray[i].bio} ${peopleArray[i].image}</section>
+  		<footer>${peopleArray[i].lifespan}</footer>
+		</person>`
 	}
 };
 
@@ -33,12 +38,3 @@ myRequest.addEventListener("error", XHRFail);
 myRequest.open("GET", "items.json");
 	// console.log("data", myRequest);
 myRequest.send();
-
-
-
-
-
-
-
-
-
