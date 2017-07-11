@@ -43,28 +43,43 @@ function activateClickEvent() {
 		cards[i].addEventListener("click", function (e) {
 			activateFocusEvent()
 			deathCard()
-			activateDottedBorder(e.currentTarget)
+			activateBorderEvent(e.currentTarget)
 		})
 	}
-}
+};
 
 function activateFocusEvent() {
 	input.focus()
-}
+};
 
-function activateDottedBorder(clickedCard) {
-	console.log("what about this click", clickedCard)
+function activateBorderEvent(clickedCard) {
 	clickedCard.classList.add("selectedCard")
-}
+	activateKeyEvent(clickedCard)
+};
 
 function deathCard() {
-	console.log("cards", cards)
 	for (var i = 0; i < cards.length; i++) {
-		if (cards[i].classList.contains("selectedCard") {
-			cards[i].classList.("selectedCard")
-		})
+		if (cards[i].classList.contains("selectedCard")) {
+			cards[i].classList.remove("selectedCard")
+		}
 	}
+};
+
+function activateKeyEvent(clickedCard) {
+	input.addEventListener("keyup", function() {
+		mirrorText(clickedCard);
+	});
+};
+
+function mirrorText(clickedCard) {
+	console.log("mirrorText", clickedCard)
 }
+
+
+
+
+
+
 
 
 
@@ -79,18 +94,8 @@ function deathCard() {
 // // add/remove visible, depending on test conditional, i less than 10
 // div.classList.toggle("visible", i < 10 );
 
-alert(div.classList.contains("foo"));
+// alert(div.classList.contains("foo"));
 
 // // add or remove multiple classes
 // div.classList.add("foo", "bar");
 // div.classList.remove("foo", "bar");
-
-
-
-
-
-
-
-
-
-
