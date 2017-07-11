@@ -1,7 +1,8 @@
 img {
 	height: 200px;
 	width: 30%;
-};	
+};
+
 
 /* Align odd paragraphs to yellow */
 .cards:nth-of-type(2n+1) { 
@@ -26,3 +27,10 @@ img {
 .selectedCard {
 	border: dotted black 2px;
 }
+
+.bio {
+
+}
+
+
+

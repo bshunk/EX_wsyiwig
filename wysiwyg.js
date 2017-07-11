@@ -14,8 +14,8 @@ function outputCards(peopleArray) {
 	for (var i = 0; i < peopleArray.length; i++) {
 		container.innerHTML += `<div class="cards"><person><header>${
 		peopleArray[i].name} & ${peopleArray[i].title}</header><
-		section>${peopleArray[i].bio} <img src="${peopleArray[i].image}
-		"></img></section><footer>${peopleArray[i].lifespan.birth} ${
+		section><span class="bio">${peopleArray[i].bio}</span><img src="${peopleArray[i].image
+		}"></img></section><footer>${peopleArray[i].lifespan.birth} ${
 		peopleArray[i].lifespan.death}</footer></person></div>`
 	}
 	activateClickEvent()
@@ -72,7 +72,9 @@ function activateKeyEvent(clickedCard) {
 };
 
 function mirrorText(clickedCard) {
-	console.log("mirrorText", clickedCard)
+	console.log("input value", input.value);
+	clickedCard.querySelector(".bio");
+	clickedCard.innerHTML += `${}`
 }
 
 
@@ -84,18 +86,5 @@ function mirrorText(clickedCard) {
 
 
 
-// // div is an object reference to a <div> element with class="foo bar"
-// div.classList.remove("foo");
-// div.classList.add("anotherclass");
 
-// // if visible is set remove it, otherwise add it
-// div.classList.toggle("visible");
 
-// // add/remove visible, depending on test conditional, i less than 10
-// div.classList.toggle("visible", i < 10 );
-
-// alert(div.classList.contains("foo"));
-
-// // add or remove multiple classes
-// div.classList.add("foo", "bar");
-// div.classList.remove("foo", "bar");
