@@ -37,9 +37,10 @@ myRequest.send();
 function activateClickEvent() {
 	for (var i = 0; i < cards.length; i++) {
 		cards[i].addEventListener("click", function (e) {
-			activateFocusEvent()
-			deathCard()
-			activateBorderEvent(e.currentTarget)
+			clearInputEvent();
+			activateFocusEvent();
+			deathCard();
+			activateBorderEvent(e.currentTarget);
 		})
 	}
 };
@@ -62,8 +63,13 @@ function deathCard() {
 };
 
 function activateKeyEvent(clickedCard) {
-	input.addEventListener("keyup", function() {
+	input.addEventListener("keyup", function(e) {
+		console.log("event", e);
+		if (e.keyCode === 13) {
+			clearInputEvent()
+		}else {
 		mirrorText(clickedCard);
+		}
 	});
 };
 
@@ -73,4 +79,15 @@ function mirrorText(clickedCard) {
 		clickedCard.querySelector(".bio").innerHTML = input.value;
 	}
 };
+
+function clearInputEvent() {
+	input.value = "";
+};
+
+
+
+
+
+
+
 
