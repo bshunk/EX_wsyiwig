@@ -23,4 +23,6 @@ img {
 	background-color: yellow;
 }
 
-
+.selectedCard {
+	border: dotted black 2px;
+}

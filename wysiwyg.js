@@ -42,6 +42,7 @@ function activateClickEvent() {
 	for (var i = 0; i < cards.length; i++) {
 		cards[i].addEventListener("click", function (e) {
 			activateFocusEvent()
+			deathCard()
 			activateDottedBorder(e.currentTarget)
 		})
 	}
@@ -53,6 +54,43 @@ function activateFocusEvent() {
 
 function activateDottedBorder(clickedCard) {
 	console.log("what about this click", clickedCard)
+	clickedCard.classList.add("selectedCard")
 }
+
+function deathCard() {
+	console.log("cards", cards)
+	for (var i = 0; i < cards.length; i++) {
+		if (cards[i].classList.contains("selectedCard") {
+			cards[i].classList.("selectedCard")
+		})
+	}
+}
+
+
+
+
+// // div is an object reference to a <div> element with class="foo bar"
+// div.classList.remove("foo");
+// div.classList.add("anotherclass");
+
+// // if visible is set remove it, otherwise add it
+// div.classList.toggle("visible");
+
+// // add/remove visible, depending on test conditional, i less than 10
+// div.classList.toggle("visible", i < 10 );
+
+alert(div.classList.contains("foo"));
+
+// // add or remove multiple classes
+// div.classList.add("foo", "bar");
+// div.classList.remove("foo", "bar");
+
+
+
+
+
+
+
+
 
 
