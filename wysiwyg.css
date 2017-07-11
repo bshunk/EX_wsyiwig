@@ -1,4 +1,22 @@
 img {
-	height: 400px;
-	width: 30%;
-};
+	height: 200px;
+	width: 150px;
+};	
+
+/* Align odd paragraphs to yellow */
+.cards:nth-of-type(2n+1) { 
+	background-color: lightyellow; 
+}
+
+/* Align even paragraphs to blue */
+.cards:nth-of-type(2n) {
+	background-color: lightblue;
+}
+
+.cards {
+	border: solid black 2px;
+	height: 300px;
+	width: 50%;
+}
+
+
