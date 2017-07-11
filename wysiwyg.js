@@ -69,6 +69,8 @@ function activateKeyEvent(clickedCard) {
 
 function mirrorText(clickedCard) {
 	console.log("input value", input.value);
-	clickedCard.querySelector(".bio").innerHTML = input.value;
+	if (clickedCard.classList.contains("selectedCard")) {
+		clickedCard.querySelector(".bio").innerHTML = input.value;
+	}
 };
 
