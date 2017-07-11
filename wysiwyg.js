@@ -12,11 +12,7 @@ function setArr() {
 	
 function outputCards(peopleArray) {
 	for (var i = 0; i < peopleArray.length; i++) {
-		container.innerHTML += `<div class="cards"><person><header>${
-		peopleArray[i].name} & ${peopleArray[i].title}</header><
-		section><span class="bio">${peopleArray[i].bio}</span><img src="${peopleArray[i].image
-		}"></img></section><footer>${peopleArray[i].lifespan.birth} ${
-		peopleArray[i].lifespan.death}</footer></person></div>`
+		container.innerHTML += `<div class="cards"><person><header>${peopleArray[i].name} & ${peopleArray[i].title}</header><span class="bio">${peopleArray[i].bio}</span><img src="${peopleArray[i].image}"></img></section><footer>${peopleArray[i].lifespan.birth} ${peopleArray[i].lifespan.death}</footer></person></div>`
 	}
 	activateClickEvent()
 };
@@ -73,18 +69,6 @@ function activateKeyEvent(clickedCard) {
 
 function mirrorText(clickedCard) {
 	console.log("input value", input.value);
-	clickedCard.querySelector(".bio");
-	clickedCard.innerHTML += `${}`
-}
-
-
-
-
-
-
-
-
-
-
-
+	clickedCard.querySelector(".bio").innerHTML = input.value;
+};
 
