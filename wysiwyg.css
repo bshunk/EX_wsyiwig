@@ -1,6 +1,6 @@
 img {
 	height: 200px;
-	width: 150px;
+	width: 30%;
 };	
 
 /* Align odd paragraphs to yellow */
@@ -17,6 +17,10 @@ img {
 	border: solid black 2px;
 	height: 300px;
 	width: 50%;
+}
+
+#input:focus {
+	background-color: yellow;
 }
 
 
