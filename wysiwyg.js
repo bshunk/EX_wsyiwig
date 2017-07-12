@@ -145,3 +145,7 @@ function clearInputEvent() {
 	// sets the input field to the value of an empty string
 	input.value = "";
 };
+
+
+
+
