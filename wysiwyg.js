@@ -159,11 +159,3 @@ function clearInputEvent() {
 	// sets the input field to nothing/ aka removes any data in the field
 	input.value = "";
 };
-
-
-
-
-
-
-
-
