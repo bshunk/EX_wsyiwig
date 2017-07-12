@@ -15,10 +15,10 @@ function setArr() {
 	outputCards(array)
 };
 	
-// defines outputCards function while expecting peopleArray to be passed in (from line 15, array)
+// defines the function outputCards while expecting peopleArray to be passed in (from line 15, through 'array')
 function outputCards(peopleArray) {
 	
-	// for loop that iterates through the peopleArray
+	// for loop that iterates over the peopleArray
 	for (var i = 0; i < peopleArray.length; i++) {
 
 		// sets the container to display all the json info through concatenation upon getting the json file through the XHR
@@ -39,13 +39,13 @@ function XHRFail() {
 // creates variable myRequest and sets it equal to a new XHR object
 var myRequest = new XMLHttpRequest();
 
-//adds an event listener so when the page loads, the function setArr is executed
+//adds an event listener so when the page loads, the setArr function will run
 myRequest.addEventListener("load", setArr);
 
 // adds an event listener so if there is an error, the XHRFail function will run
 myRequest.addEventListener("error", XHRFail);
 
-// intitialize a request for items.json file ---> tells it that it's a "GET" request for a json file
+// intitializing a request for items.json file ---> tells it that it's a "GET" request for a json file
 myRequest.open("GET", "items.json");
 	
 // sends the request 
@@ -54,35 +54,35 @@ myRequest.send();
 // defines the function activateClickEvent
 function activateClickEvent() {
 
-	// for loop that iterates through the cards array
+	// for loop that iterates over the cards array
 	for (var i = 0; i < cards.length; i++) {
 
-		// for each card it adds a "click" event listener and an event function
+		// for each card it adds a "click" event listener and an (e), aka 'event', function
 		cards[i].addEventListener("click", function (e) {
 
-			// calls function clearInputEvent
+			// calls the function clearInputEvent
 			clearInputEvent();
 
-			// calls function activateFocusEvent
+			// calls the function activateFocusEvent
 			activateFocusEvent();
 			
-			// calls deathCard function
+			// calls the function deathCard
 			deathCard();
 
-			// calls activateBorderEvent function and passes in e.currentTarget
+			// calls the function activateBorderEvent and passes in (e.currentTarget)
 			activateBorderEvent(e.currentTarget);
 		})
 	}
 };
 
-// defines function activateFocus event
+// defines function activateFocusEvent
 function activateFocusEvent() {
 
-	// takes the input element and adds the property focus to react once clicked
+	// selects the input element and adds the method 'focus'--> the input gets focused when clicked
 	input.focus()
 };
 
-// defines function activateBorderEvent and expects clickedCard to be passed in (from line 73, e.currentTarget)
+// defines function activateBorderEvent and expects clickedCard to be passed in (from line 73, through 'e.currentTarget')
 function activateBorderEvent(clickedCard) {
 
 	// adds a class element of "selectedCard" to clickedCard
@@ -95,10 +95,10 @@ function activateBorderEvent(clickedCard) {
 // defines function deathCard
 function deathCard() {
 
-	// for loop that iterates through the cards array
+	// for loop that iterates over the cards array
 	for (var i = 0; i < cards.length; i++) {
 
-		// condition checking to see if each card contains a classList of "selectedCard"
+		// condition checking to see if each card contains a class of "selectedCard"
 		if (cards[i].classList.contains("selectedCard")) {
 
 			// if true, removes the class "selectedCard" from each card selected
@@ -107,10 +107,10 @@ function deathCard() {
 	}
 };
 
-// defines function activateKeyEvent and expects clickedCard to be passed in (from line 92, clickedCard)
+// defines function activateKeyEvent and expects clickedCard to be passed in (from line 92, through 'clickedCard')
 function activateKeyEvent(clickedCard) {
 
-	// adds an event listener to the keyup in the input field and runs an event function
+	// adds an event listener to any 'keyup' in the input field and runs an event function
 	input.addEventListener("keyup", function(e) {
 
 		// condition that checks to see if the key stroke was a return/enter from the user
@@ -128,7 +128,7 @@ function activateKeyEvent(clickedCard) {
 	});
 };
 
-// defines function mirrorText and expects clickedCard to be passed in (from line 126, clickedCard)
+// defines function mirrorText and expects clickedCard to be passed in (from line 126, through 'clickedCard')
 function mirrorText(clickedCard) {
 
 	// condition that checks to see if the selected card contains a class of "selectedCard"
