@@ -1,4 +1,4 @@
-// declared variables to hold objects
+// declared variables to hold variables
 let input = document.getElementById("input");
 let container = document.getElementById("container");
 let cards = document.getElementsByClassName("cards");
@@ -8,14 +8,14 @@ let array = [];
 // defines the function setArr 
 function setArr() {
 
-	// set array to equal the parsed the json file so it's not displayed like a straight JSON file 
+	// set array to equal the parsed json file so it's not displayed like a straight JSON file 
 	array = JSON.parse(this.responseText)
 
 	// calls outputCards function and passes array into the function
 	outputCards(array)
 };
 	
-// defines outputCards function while expecting peopleArray to happen (from line 15, array)
+// defines outputCards function while expecting peopleArray to be passed in (from line 15, array)
 function outputCards(peopleArray) {
 	
 	// for loop that iterates through the peopleArray
@@ -32,7 +32,7 @@ function outputCards(peopleArray) {
 // defines the function XHRFail
 function XHRFail() {
 
-	// displays error in the console if the XHR failed to load
+	// displays "error" in the console if the XHR failed to load
 	console.log(this.status, this.statusText)
 };
 
@@ -45,7 +45,7 @@ myRequest.addEventListener("load", setArr);
 // adds an event listener so if there is an error, the XHRFail function will run
 myRequest.addEventListener("error", XHRFail);
 
-// intitialize a request for "wysiwyg.json"
+// intitialize a request for items.json file ---> tells it that it's a "GET" request for a json file
 myRequest.open("GET", "items.json");
 	
 // sends the request 
@@ -82,7 +82,7 @@ function activateFocusEvent() {
 	input.focus()
 };
 
-// defines function activateBorderEvent and expects clickedCard to run (from line 73, e.currentTarget)
+// defines function activateBorderEvent and expects clickedCard to be passed in (from line 73, e.currentTarget)
 function activateBorderEvent(clickedCard) {
 
 	// adds a class element of "selectedCard" to clickedCard
@@ -107,7 +107,7 @@ function deathCard() {
 	}
 };
 
-// defines function activateKeyEvent and passes in clickedCard (from line 92, clickedCard)
+// defines function activateKeyEvent and expects clickedCard to be passed in (from line 92, clickedCard)
 function activateKeyEvent(clickedCard) {
 
 	// adds an event listener to the keyup in the input field and runs an event function
@@ -128,7 +128,7 @@ function activateKeyEvent(clickedCard) {
 	});
 };
 
-// defines function mirrorText and expects clickedCard to run (from line 126, clickedCard)
+// defines function mirrorText and expects clickedCard to be passed in (from line 126, clickedCard)
 function mirrorText(clickedCard) {
 
 	// condition that checks to see if the selected card contains a class of "selectedCard"
