@@ -45,7 +45,7 @@ myRequest.addEventListener("load", setArr);
 // adds an event listener so if there is an error, the XHRFail function will run
 myRequest.addEventListener("error", XHRFail);
 
-// opens json files and sends it to getJson function
+// intitialize a request for "wysiwyg.json"
 myRequest.open("GET", "items.json");
 	
 // sends the request 
@@ -98,10 +98,10 @@ function deathCard() {
 	// for loop that iterates through the cards array
 	for (var i = 0; i < cards.length; i++) {
 
-		// condition checking to see if the selected card contains a classList of "selectedCard"
+		// condition checking to see if each card contains a classList of "selectedCard"
 		if (cards[i].classList.contains("selectedCard")) {
 
-			// if true, removes the data from the condition
+			// if true, removes the class "selectedCard" from each card selected
 			cards[i].classList.remove("selectedCard")
 		}
 	}
@@ -134,7 +134,7 @@ function mirrorText(clickedCard) {
 	// condition that checks to see if the selected card contains a class of "selectedCard"
 	if (clickedCard.classList.contains("selectedCard")) {
 
-		// if true, the area within the bio class that's inside of the span gets equaled to the value of the user input field
+		// if true, selects the innerHTML of the element (<span>) and sets it to equal the value of what is typed into the input field
 		clickedCard.querySelector(".bio").innerHTML = input.value;
 	}
 };
@@ -145,7 +145,4 @@ function clearInputEvent() {
 	// sets the input field to the value of an empty string
 	input.value = "";
 };
-
-
-
 
